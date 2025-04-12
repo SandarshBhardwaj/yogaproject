@@ -19,20 +19,22 @@ export default function Home(): JSX.Element {
   return (
     <div className="">
       <Header />
-      <main>
-        <motion.h1
-          initial={{ opacity: 0, y: 180 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className={`${rajdhani.className} max-w-[800px] text-[#003342] mx-auto text-center text-5xl xl:text-6xl font-bold mb-20`}
-        >
-          The Transformative Powers of Yoga and Meditation
-        </motion.h1>
-        <Hero />
-        <About />
-        <YogaClasses />
-        <SlideSections />
-      </main>
+      <main className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <motion.h1
+    initial={{ opacity: 0, y: 180 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+    className={`${rajdhani.className} text-[#003342] text-center text-5xl xl:text-6xl font-bold mb-20`}
+  >
+    The Transformative Powers of Yoga and Meditation
+  </motion.h1>
+
+  <Hero />
+  <About />
+  <YogaClasses />
+  <SlideSections />
+</main>
+
 
       <Footer />
     </div>

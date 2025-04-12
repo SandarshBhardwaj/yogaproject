@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 
+/* General body font styling */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Floating animation (e.g., for UFO or elements that hover) */
 @keyframes floating {
   0% {
     transform: translateY(0);
@@ -16,6 +18,7 @@ body {
   }
 }
 
+/* Left-right hover animation */
 @keyframes left-right {
   0% {
     transform: translateX(0);
@@ -28,13 +31,17 @@ body {
   }
 }
 
-/* .animate-floating {
-  animation: floating 2s infinite ease-in-out;
-} */
-
+/* Optional: Apply floating on hover (add this class to desired elements) */
 .float-animation:hover {
   animation: floating 2s infinite ease-in-out;
 }
+
+/* Optional: Left-right movement on hover */
 .left-right-animation:hover {
   animation: left-right 3s infinite ease-in-out;
+}
+
+/* Consistent max-width layout container */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
