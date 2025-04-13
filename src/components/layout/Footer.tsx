@@ -1,22 +1,21 @@
 import React from 'react';
-import FancyBtn from '../common/FancyBtn'
-import Image from 'next/image'
+import FancyBtn from '../common/FancyBtn';
+import Image from 'next/image';
 import {
   FaFacebookSquare,
   FaInstagram,
   FaPhoneAlt,
   FaYoutube,
-  FaMapMarkerAlt,
 } from 'react-icons/fa';
 import { FaLocationDot, FaXTwitter } from 'react-icons/fa6';
-import Divider from '..//common/Divider';
+import Divider from '../common/Divider';
 import { Rajdhani } from 'next/font/google';
 import { motion } from 'framer-motion';
 
 const rajdhani = Rajdhani({
   weight: ['400', '700', '600'],
   subsets: ['latin'],
-})
+});
 
 export default function Footer() {
   return (
@@ -57,9 +56,7 @@ export default function Footer() {
           className="relative flex text-white p-10 flex-col justify-end bg-cover bg-center m-5 min-h-[400px] w-full md:h-[70vh] md:w-[30vw] rounded-tr-4xl rounded-bl-4xl shadow-lg"
         >
           <p className="text-[#18CBE4] font-semibold tracking-wide">News</p>
-          <p
-            className={`${rajdhani.className} text-2xl font-bold hover:text-[#18CBE4] `}
-          >
+          <p className={`${rajdhani.className} text-2xl font-bold hover:text-[#18CBE4]`}>
             The Science Behind Yoga: How It Affects Your Brain And Body
           </p>
           <p className="opacity-80">April 25, 2023</p>
@@ -76,8 +73,7 @@ export default function Footer() {
           {[
             {
               img: 'https://templatekit.jegtheme.com/yogafit/wp-content/uploads/sites/367/2023/04/portrait-of-attractive-blonde-hair-young-woman-exercise-yoga-outdoor--e1682387007214.jpg',
-              title:
-                'The Science Behind Yoga: How It Affects Your Brain And Body',
+              title: 'The Science Behind Yoga: How It Affects Your Brain And Body',
               date: 'April 25, 2023',
             },
             {
@@ -91,7 +87,7 @@ export default function Footer() {
               className="flex flex-wrap gap-5 items-center p-6 rounded-lg"
             >
               <Image
-                alt=""
+                alt={`Thumbnail for ${article.title}`}
                 width={300}
                 height={300}
                 src={article.img}
@@ -113,23 +109,6 @@ export default function Footer() {
         </motion.div>
       </section>
 
-      {/* <div className="-m-56">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#d5eeff"
-            fillOpacity="1"
-            d="M0,160L120,186.7C240,213,480,267,720,261.3C960,256,1200,192,1320,160L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-          ></path>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#d5eeff"
-            fillOpacity="1"
-            d="M0,160L120,186.7C240,213,480,267,720,261.3C960,256,1200,192,1320,160L1440,128L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-          ></path>
-        </svg>
-      </div> */}
-
       <section className="xl:p-20 m-5">
         <div
           style={{
@@ -137,7 +116,7 @@ export default function Footer() {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'right',
           }}
-          className="mx-auto rounded-tr-4xl rounded-bl-4xl flex flex-col items-center justify-center gap-12 p-10 xl:p-20 max-w-[900px]  bg-teal-950 text-white"
+          className="mx-auto rounded-tr-4xl rounded-bl-4xl flex flex-col items-center justify-center gap-12 p-10 xl:p-20 max-w-[900px] bg-teal-950 text-white"
         >
           <h1
             className={`${rajdhani.className} text-4xl max-w-[700px] mx-auto text-center`}
@@ -146,7 +125,7 @@ export default function Footer() {
           </h1>
           <div className="w-full flex justify-center">
             <input
-              className="bg-white text-black p-4 rounded-bl-xl max-w-[400px]"
+              className="bg-white text-black p-4 rounded-bl-xl max-w-[400px] w-full"
               type="email"
               placeholder="Enter Your Email"
             />
@@ -161,23 +140,18 @@ export default function Footer() {
         <div className="flex flex-wrap justify-between py-10 xl:px-32 px-5">
           <div className="flex flex-col gap-5">
             <p className="font-bold text-[#18CBE4]">Contact Us</p>
-            <p
-              className={`${rajdhani.className} text-[#003342] text-4xl font-bold`}
-            >
+            <p className={`${rajdhani.className} text-[#003342] text-4xl font-bold`}>
               hello@yogafit.com
             </p>
             <div className="flex flex-wrap items-center gap-10">
               <p className="flex gap-2 items-center">
-             
-              {/*} <FaLocationDot className="text-[#18CBE4]" /> */}
-
- 
+                <FaLocationDot className="text-[#18CBE4]" />
                 <span className="text-[#33333391]">
                   Jalan Raya Ubud No. 99x Gianyar - Bali
                 </span>
               </p>
               <p className="flex gap-2 items-center">
-                {/* <FaPhoneAlt className="text-[#18CBE4]" />{' '} */}
+                <FaPhoneAlt className="text-[#18CBE4]" />
                 <span className="text-[#33333391]">+123-456-7890</span>
               </p>
             </div>
@@ -188,16 +162,17 @@ export default function Footer() {
               src="/images/logo.png"
               width={120}
               height={120}
-              alt="logo"
+              alt="YogaFit logo"
             />
           </div>
         </div>
-        <div className="flex items-center  py-10 xl:px-32 px-5">
+
+        <div className="flex items-center py-10 xl:px-32 px-5">
           <p className="text-[#33333391] max-w-[280px]">
             Follow our social media
           </p>
           <Divider />
-          <ul className="flex gap-2 text-xl ml-10 text-[#18CBE4] ">
+          <ul className="flex gap-2 text-xl ml-10 text-[#18CBE4]">
             <li className="hover:text-[#4ba8b5] cursor-pointer">
               <FaFacebookSquare />
             </li>
@@ -215,9 +190,8 @@ export default function Footer() {
       </section>
 
       <section className="flex w-screen justify-between py-7 xl:px-32 px-5 text-xs xl:text-lg text-center bg-teal-950 text-white">
-        <p>Yoga, Meditation & Fitness replica developed by Ajay Sanwlot</p>
         <p>Copyright © 2025. All rights reserved.</p>
       </section>
     </footer>
-  )
+  );
 }

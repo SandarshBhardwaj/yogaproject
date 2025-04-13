@@ -5,14 +5,12 @@ import Image from 'next/image'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose, IoIosArrowDown } from 'react-icons/io'
 import { AnimatePresence, motion } from 'framer-motion'
-// import { rajdhani } from '@/app/fonts' // Assuming you defined rajdhani in a local fonts file
-// at the top of your Header.tsx or layout.tsx
-import { Rajdhani } from 'next/font/google';
+import { Rajdhani } from 'next/font/google'
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
-  weight: ['400', '500', '700'], // adjust as needed
-});
+  weight: ['400', '500', '700'],
+})
 
 export default function Header(): JSX.Element {
   const [showNav, setShowNav] = useState(false)
@@ -33,6 +31,7 @@ export default function Header(): JSX.Element {
         <AnimatePresence>
           {showNav && (
             <motion.div
+              key="mobile-nav"
               initial={{ x: '-100%' }}
               animate={{ x: '0%' }}
               exit={{ x: '-100%' }}
@@ -72,15 +71,9 @@ export default function Header(): JSX.Element {
                   </span>
                   {showPagesNav && (
                     <ul className="flex flex-col gap-5 w-[200px] p-5 bg-white">
-                      <li>
-                        <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Pricing</a>
-                      </li>
-                      <li>
-                        <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">FAQ</a>
-                      </li>
-                      <li>
-                        <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">404 Page</a>
-                      </li>
+                      <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Pricing</a></li>
+                      <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">FAQ</a></li>
+                      <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">404 Page</a></li>
                     </ul>
                   )}
                 </li>
@@ -99,12 +92,8 @@ export default function Header(): JSX.Element {
                   </span>
                   {showBlogNav && (
                     <ul className="flex flex-col gap-5 w-[200px] p-5 bg-white">
-                      <li>
-                        <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Blog</a>
-                      </li>
-                      <li>
-                        <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Single Post</a>
-                      </li>
+                      <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Blog</a></li>
+                      <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Single Post</a></li>
                     </ul>
                   )}
                 </li>
@@ -120,18 +109,10 @@ export default function Header(): JSX.Element {
 
       {/* Desktop Navigation */}
       <ul className="hidden xl:flex justify-center items-center gap-14 p-10">
-        <li>
-          <a href="#" className="text-[#18CBE4] font-bold">Home</a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">About</a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Classes</a>
-        </li>
-        <li>
-          <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Home</a>
-        </li>
+        <li><a href="#" className="text-[#18CBE4] font-bold">Home</a></li>
+        <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">About</a></li>
+        <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Classes</a></li>
+
         <li className="text-center">
           <Image src="/images/logo.png" alt="Logo" width={100} height={40} className="mx-10" />
         </li>
@@ -151,7 +132,7 @@ export default function Header(): JSX.Element {
           {showPagesNav && (
             <ul
               onMouseLeave={() => setShowPagesNav(false)}
-              className="flex flex-col gap-5 shadow-2xl shadow-black w-[200px] p-5 absolute top-15 z-[100] bg-white rounded-tr-3xl rounded-bl-3xl"
+              className="flex flex-col gap-5 shadow-2xl shadow-black w-[200px] p-5 absolute top-[60px] z-[100] bg-white rounded-tr-3xl rounded-bl-3xl"
             >
               <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Pricing</a></li>
               <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">FAQ</a></li>
@@ -175,7 +156,7 @@ export default function Header(): JSX.Element {
           {showBlogNav && (
             <ul
               onMouseLeave={() => setShowBlogNav(false)}
-              className="flex flex-col gap-5 shadow-2xl shadow-black w-[200px] p-5 absolute top-15 z-[100] bg-white rounded-tr-3xl rounded-bl-3xl"
+              className="flex flex-col gap-5 shadow-2xl shadow-black w-[200px] p-5 absolute top-[60px] z-[100] bg-white rounded-tr-3xl rounded-bl-3xl"
             >
               <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Blog</a></li>
               <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Single Post</a></li>
@@ -183,9 +164,7 @@ export default function Header(): JSX.Element {
           )}
         </li>
 
-        <li>
-          <a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Contact</a>
-        </li>
+        <li><a href="#" className="hover:text-[#18CBE4] transition-all duration-500">Contact</a></li>
       </ul>
     </header>
   )
