@@ -12,7 +12,7 @@ const rajdhani = Rajdhani({
   weight: ['400', '500', '700'],
 })
 
-export default function Header(): JSX.Element {
+export default function Header() {
   const [showNav, setShowNav] = useState(false)
   const [showPagesNav, setShowPagesNav] = useState(false)
   const [showBlogNav, setShowBlogNav] = useState(false)
